@@ -15,7 +15,7 @@ isChinese('中国').should.true();
 isChinese('中国ss').should.false();
 isChinese('ss').should.false();
 
-// when es6 is enable, it's true. es5 would fail
+// when es6 is enable, it's `true`. es5 would `false`
 isChinese("\uD842\uDFB7").should.true();
 
 ```
