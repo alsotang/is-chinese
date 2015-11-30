@@ -1,4 +1,5 @@
 var isChinese = require('..')
+var utils = require('../lib/utils')
 
 describe('test/is_chinese.test.js', function () {
   it('should throw', function () {
@@ -25,23 +26,26 @@ describe('test/is_chinese.test.js', function () {
     })
   })
 
-  describe('es6 version', function () {
-    it('should work with `中国`', function () {
-      isChinese.es6('中国').should.true();
-    })
+  if (utils.ises6()) {
+    describe('es6 version', function () {
+      it('should work with `中国`', function () {
+        isChinese.es6('中国').should.true();
+      })
 
-    it('should not work with `中国ss`', function () {
-      isChinese.es6('中国ss').should.false();
-    })
+      it('should not work with `中国ss`', function () {
+        isChinese.es6('中国ss').should.false();
+      })
 
-    it('should not work with `ss`', function () {
-      isChinese.es6('ss').should.false();
-    })
+      it('should not work with `ss`', function () {
+        isChinese.es6('ss').should.false();
+      })
 
-    it('should work with "\uD842\uDFB7"', function () {
-      isChinese.es6("\uD842\uDFB7").should.true();
+      it('should work with "\uD842\uDFB7"', function () {
+        isChinese.es6("\uD842\uDFB7").should.true();
+      })
     })
-  })
+  }
+
 
   describe('isChinese', function () {
     it('should work with `中国`', function () {

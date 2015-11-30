@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.org/alsotang/is-chinese.svg?branch=master)](https://travis-ci.org/alsotang/is-chinese)
+
 ## description
 
 Chinese range is based on: https://en.wikipedia.org/wiki/CJK_Unified_Ideographs
 
-When your js runtion support es6, the result would more accuracy.
+When your js runtime support es6, the result would more accuracy.(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
 
 
 ## example
