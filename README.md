@@ -13,12 +13,16 @@ isChinese('中国').should.true();
 isChinese('中国ss').should.false();
 isChinese('ss').should.false();
 
-// when es6 is enable, es5 would fail
+// when es6 is enable, it's true. es5 would fail
 isChinese("\uD842\uDFB7").should.true();
 
 ```
 
-## usage
+## benchmark
+
+```
+966,144 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
+```
 
 ## license
 

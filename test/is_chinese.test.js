@@ -20,8 +20,8 @@ describe('test/is_chinese.test.js', function () {
       isChinese.es5('ss').should.false();
     })
 
-    it('should not work with `0x20BB7`', function () {
-      isChinese.es5('\u{20BB7}').should.false();
+    it('should not work with "\uD842\uDFB7"', function () {
+      isChinese.es5("\uD842\uDFB7").should.false();
     })
   })
 
@@ -38,8 +38,8 @@ describe('test/is_chinese.test.js', function () {
       isChinese.es6('ss').should.false();
     })
 
-    it('should work with `0x20BB7`', function () {
-      isChinese.es6('\u{20BB7}').should.true();
+    it('should work with "\uD842\uDFB7"', function () {
+      isChinese.es6("\uD842\uDFB7").should.true();
     })
   })
 
