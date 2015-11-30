@@ -1,5 +1,17 @@
 [![Build Status](https://travis-ci.org/alsotang/is-chinese.svg?branch=master)](https://travis-ci.org/alsotang/is-chinese)
 
+## install
+
+for npm
+
+`$ npm install is-chinese`
+
+for browser
+
+`<script src="ischinese.js"></script>`
+
+A UMD bundle. If no module system is found, `window.ischinese` would be assigned.
+
 ## description
 
 Chinese range is based on: https://en.wikipedia.org/wiki/CJK_Unified_Ideographs
