@@ -4,4 +4,8 @@ suite('is_chinese', function () {
   bench('isChinese("扁担宽，板凳长，扁担想绑在板凳上。")', function() {
     isChinese("扁担宽，板凳长，扁担想绑在板凳上。");
   });
+
+  bench('isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")', function() {
+    isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。");
+  });
 });
