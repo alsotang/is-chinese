@@ -45,11 +45,11 @@ describe('test/is_chinese.test.js', function () {
 
   describe('isChinese', function () {
     it('should work with `中国`', function () {
-      isChinese.es6('中国').should.true();
+      isChinese('中国').should.true();
     })
 
     it('should work with "\uD842\uDFB7"', function () {
-      isChinese.es6("\uD842\uDFB7").should[process.version[1] == '0' ? 'false' : 'true']();
+      isChinese("\uD842\uDFB7").should[process.version[1] == '0' ? 'false' : 'true']();
     })
   })
 })
