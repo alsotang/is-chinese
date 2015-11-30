@@ -48,8 +48,8 @@ describe('test/is_chinese.test.js', function () {
       isChinese.es6('中国').should.true();
     })
 
-    it('should work with `0x20BB7`', function () {
-      isChinese.es6('\u{20BB7}').should[process.version[1] == '0' ? 'false' : 'true']();
+    it('should work with "\uD842\uDFB7"', function () {
+      isChinese.es6("\uD842\uDFB7").should[process.version[1] == '0' ? 'false' : 'true']();
     })
   })
 })
