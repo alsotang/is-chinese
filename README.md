@@ -19,7 +19,7 @@ Chinese range is based on: https://en.wikipedia.org/wiki/CJK_Unified_Ideographs
 ## example
 
 ```js
-var isChinese = require('..')
+var isChinese = require('is-chinese')
 isChinese('中国').should.true();
 isChinese('中国ss').should.false();
 isChinese('ss').should.false();
