@@ -23,7 +23,7 @@ isChinese("\uD842\uDFB7").should.true();
 ## benchmark
 
 ```
-966,144 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
+8,364,817 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
 ```
 
 ## license
