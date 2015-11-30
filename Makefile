@@ -6,7 +6,10 @@ test:
 benchmark bench:
 	./node_modules/.bin/matcha benchmark.js
 
-publish:
-	browserify index.js -o ischinese.js -s ischinese && npm publish && git push
+publish: bundle
+	npm publish && git push
 
-.PHONY: all test benchmark bench publish
+bundle:
+	browserify index.js -o ischinese.js -s ischinese
+
+.PHONY: all test benchmark bench publish bundle
