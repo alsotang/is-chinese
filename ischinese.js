@@ -3,8 +3,6 @@ module.exports = require('./lib/is_chinese')
 },{"./lib/is_chinese":2}],2:[function(require,module,exports){
 require('string.prototype.codepointat');
 
-var utils = require('./utils')
-
 var chineseRange = [
   [0x4e00, 0x9fff], // CJK Unified Ideographs
   [0x3400, 0x4dbf], // CJK Unified Ideographs Extension A
@@ -55,16 +53,7 @@ var isChinese = function (str) {
 
 exports = module.exports = isChinese;
 
-},{"./utils":3,"string.prototype.codepointat":4}],3:[function(require,module,exports){
-exports.ises6 = function () {
-  try {
-    "".codePointAt()
-    return true
-  } catch (e) {
-    return false
-  }
-}
-},{}],4:[function(require,module,exports){
+},{"string.prototype.codepointat":3}],3:[function(require,module,exports){
 /*! http://mths.be/codepointat v0.2.0 by @mathias */
 if (!String.prototype.codePointAt) {
 	(function() {

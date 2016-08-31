@@ -1,5 +1,4 @@
 var isChinese = require('..')
-var utils = require('../lib/utils')
 
 describe('test/is_chinese.test.js', function () {
 
