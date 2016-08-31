@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/alsotang/is-chinese.svg?branch=master)](https://travis-ci.org/alsotang/is-chinese)
 
+JS 中文字符串判断（根据 unicode 编码区间判断）
+
 ## install
 
 for npm
@@ -28,7 +30,7 @@ isChinese("\uD842\uDFB7").should.true();
 
 ## benchmark
 
-Node 4.2.1 
+Node 4.2.1
 
 ```
        8,643,328 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
