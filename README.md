@@ -33,8 +33,8 @@ isChinese("\uD842\uDFB7").should.true();
 Node 4.2.1
 
 ```
-       8,643,328 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
-      17,484,791 op/s » isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")
+13,441,062 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
+22,514,623 op/s » isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")
 ```
 
 ## license
