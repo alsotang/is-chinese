@@ -1,9 +1,33 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ischinese = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ischinese = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = require('./lib/is_chinese')
 },{"./lib/is_chinese":2}],2:[function(require,module,exports){
 require('string.prototype.codepointat');
 
 var chineseRange = [
+  0x00b7, //·
+  0x00d7, //×
+  0x2014, //—
+  0x2018, //‘
+  0x2019, //’
+  0x201c, //“
+  0x201d, //”
+  0x2026, //…
+  0x3001, //、
+  0x3002, //。
+  0x300a, //《
+  0x300b, //》
+  0x300e, //『
+  0x300f, //』
+  0x3010, //【
+  0x3011, //】
+  0xff01, //！
+  0xff08, //（
+  0xff09, //）
+  0xff0c, //，
+  0xff1a, //：
+  0xff1b, //；
+  0xff1f, //？
+
   [0x4e00, 0x9fff], // CJK Unified Ideographs
   [0x3400, 0x4dbf], // CJK Unified Ideographs Extension A
   [0x20000, 0x2a6df], // CJK Unified Ideographs Extension B
@@ -30,8 +54,9 @@ var isChinese = function (str) {
 
     for (var j = 0; j < chineseRange.length; j++) {
       range = chineseRange[j];
-      if (charCode >= range[0] && charCode <= range[1]) {
-        flag = true;
+      if (Array.isArray(range) && charCode >= range[0] && charCode <= range[1]
+        || range === charCode) {
+        flag = true; // when true, the charCode is Chinese
         break;
       }
     }
@@ -54,7 +79,7 @@ var isChinese = function (str) {
 exports = module.exports = isChinese;
 
 },{"string.prototype.codepointat":3}],3:[function(require,module,exports){
-/*! http://mths.be/codepointat v0.2.0 by @mathias */
+/*! https://mths.be/codepointat v0.2.0 by @mathias */
 if (!String.prototype.codePointAt) {
 	(function() {
 		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
@@ -91,7 +116,7 @@ if (!String.prototype.codePointAt) {
 			) {
 				second = string.charCodeAt(index + 1);
 				if (second >= 0xDC00 && second <= 0xDFFF) { // low surrogate
-					// http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
+					// https://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
 					return (first - 0xD800) * 0x400 + second - 0xDC00 + 0x10000;
 				}
 			}

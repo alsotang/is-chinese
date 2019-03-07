@@ -2,6 +2,8 @@
 
 JS 中文字符串判断（根据 unicode 编码区间判断）
 
+Determine if a string is all Chinese(based on unicode range)
+
 ## install
 
 for npm

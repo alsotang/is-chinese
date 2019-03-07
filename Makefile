@@ -10,6 +10,6 @@ publish: bundle
 	npm publish && git push
 
 bundle:
-	browserify index.js -o ischinese.js -s ischinese
+	./node_modules/.bin/browserify index.js -o ischinese.js -s ischinese
 
 .PHONY: all test benchmark bench publish bundle
