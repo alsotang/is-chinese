@@ -32,11 +32,13 @@ isChinese("\uD842\uDFB7").should.true();
 
 ## benchmark
 
-Node 4.2.1
+Node v10.1.0
+MacBook Pro (13-inch, Late 2016, Four Thunderbolt 3 Ports)
+CPU 3.3 GHz Intel Core i7
 
 ```
-13,441,062 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
-22,514,623 op/s » isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")
+1,216,847 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
+5,357,931 op/s » isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")
 ```
 
 ## license

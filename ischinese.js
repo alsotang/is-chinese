@@ -4,6 +4,7 @@ module.exports = require('./lib/is_chinese')
 require('string.prototype.codepointat');
 
 var chineseRange = [
+  // Chinese punctuation
   0x00b7, //·
   0x00d7, //×
   0x2014, //—
