@@ -13,5 +13,6 @@ describe('test/is_chinese.test.js', function () {
     assert.isTrue(isChinese("你要吃什么吗？！"))
     assert.isTrue(isChinese('扁担宽，板凳长，扁担想绑在板凳上。'))
     assert.isFalse(isChinese('ss扁担宽，板凳长，扁担想绑在板凳上。'))
+    assert.isFalse(isChinese('扁担宽，板凳长，扁担想绑在板凳上。ss'))
   })
 })

@@ -9,8 +9,15 @@ suite
   .add('isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")', function () {
     isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。");
   })
-  .add('isChinese(chars1000)', function () {
+  .add('isChinese("扁担宽，板凳长，扁担想绑在板凳上。ss")', function () {
+    isChinese("扁担宽，板凳长，扁担想绑在板凳上。ss");
+  })
+  .add('isChinese(chars1000) true', function () {
     const chars1000 = '扁担宽，板凳长，扁担'.repeat(100)
+    isChinese(chars1000);
+  })
+  .add('isChinese(chars1001) false', function () {
+    const chars1000 = '扁担宽，板凳长，扁担'.repeat(100) + 's'
     isChinese(chars1000);
   })
   // add listeners
