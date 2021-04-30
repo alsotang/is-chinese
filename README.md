@@ -6,15 +6,7 @@ Determine if a string is all Chinese(based on unicode range)
 
 ## install
 
-for npm
-
 `$ npm install is-chinese`
-
-for browser
-
-`<script src="ischinese.js"></script>`
-
-A UMD bundle. If no module system is found, `window.ischinese` would be assigned.
 
 ## description
 
@@ -32,13 +24,13 @@ isChinese("\uD842\uDFB7").should.true();
 
 ## benchmark
 
-Node v10.1.0
-MacBook Pro (13-inch, Late 2016, Four Thunderbolt 3 Ports)
-CPU 3.3 GHz Intel Core i7
+Node v15.12.0
+MacBook Pro (15-inch, 2018)
 
 ```
-1,216,847 op/s » isChinese("扁担宽，板凳长，扁担想绑在板凳上。")
-5,357,931 op/s » isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。")
+isChinese("扁担宽，板凳长，扁担想绑在板凳上。") x 1,047,458 ops/sec ±0.49% (90 runs sampled)
+isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。") x 3,836,192 ops/sec ±0.55% (89 runs sampled)
+isChinese(chars1000) x 6,418 ops/sec ±0.58% (89 runs sampled)
 ```
 
 ## license
