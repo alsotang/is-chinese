@@ -25,6 +25,7 @@ isChinese("\uD842\uDFB7").should.true();
 ## benchmark
 
 Node v15.12.0
+
 MacBook Pro (15-inch, 2018)
 
 ```
