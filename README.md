@@ -29,11 +29,11 @@ Node v15.12.0
 MacBook Pro (15-inch, 2018)
 
 ```
-isChinese("扁担宽，板凳长，扁担想绑在板凳上。") x 9,220,747 ops/sec ±1.90% (88 runs sampled)
-isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。") x 40,757,145 ops/sec ±1.22% (88 runs sampled)
-isChinese("扁担宽，板凳长，扁担想绑在板凳上。ss") x 28,585,982 ops/sec ±1.34% (89 runs sampled)
-isChinese(chars1000) true x 174,156 ops/sec ±0.84% (87 runs sampled)
-isChinese(chars1001) false x 821,587 ops/sec ±0.79% (87 runs sampled)
+isChinese("扁担宽，板凳长，扁担想绑在板凳上。") x 11,222,330 ops/sec ±0.56% (93 runs sampled)
+isChinese("ss扁担宽，板凳长，扁担想绑在板凳上。") x 41,721,748 ops/sec ±1.22% (91 runs sampled)
+isChinese("扁担宽，板凳长，扁担想绑在板凳上。ss") x 28,758,600 ops/sec ±0.53% (88 runs sampled)
+isChinese(chars1000) true x 211,711 ops/sec ±2.03% (84 runs sampled)
+isChinese(chars1001) false x 766,652 ops/sec ±1.04% (90 runs sampled)
 ```
 
 ## license

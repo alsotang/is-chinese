@@ -1,6 +1,6 @@
 {
   "name": "is-chinese",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "assert whether a string is chinese",
   "main": "index.js",
   "scripts": {
