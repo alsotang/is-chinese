@@ -2,6 +2,9 @@ const Benchmark = require('benchmark');
 const suite = new Benchmark.Suite;
 const isChinese = require('./')
 
+const chars1000 = '扁担宽，板凳长，扁担'.repeat(100)
+const chars1000WithS = '扁担宽，板凳长，扁担'.repeat(100) + 's'
+
 suite
   .add('isChinese("扁担宽，板凳长，扁担想绑在板凳上。")', function () {
     isChinese("扁担宽，板凳长，扁担想绑在板凳上。");
@@ -13,12 +16,10 @@ suite
     isChinese("扁担宽，板凳长，扁担想绑在板凳上。ss");
   })
   .add('isChinese(chars1000) true', function () {
-    const chars1000 = '扁担宽，板凳长，扁担'.repeat(100)
     isChinese(chars1000);
   })
-  .add('isChinese(chars1001) false', function () {
-    const chars1000 = '扁担宽，板凳长，扁担'.repeat(100) + 's'
-    isChinese(chars1000);
+  .add('isChinese(chars1000WithS) false', function () {
+    isChinese(chars1000WithS);
   })
   // add listeners
   .on('cycle', function (event) {
