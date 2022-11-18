@@ -1,11 +1,13 @@
 {
   "name": "is-chinese",
-  "version": "1.4.8",
+  "version": "2.0.0",
   "description": "assert whether a string is chinese",
-  "main": "index.js",
+  "main": "dist/is_chinese.js",
   "scripts": {
-    "test": "mocha",
-    "benchmark": "node benchmark.js"
+    "test": "mocha --require ts-node/register test/*",
+    "benchmark": "ts-node benchmark.ts",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,14 @@
   "author": "alsotang <alsotang@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/benchmark": "^2.1.2",
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.0",
     "benchmark": "^2.1.4",
-    "chai": "^4.3.4",
-    "mocha": "^2.3.4"
+    "chai": "^4.3.7",
+    "jest": "^29.3.1",
+    "mocha": "^10.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
   }
 }

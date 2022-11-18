@@ -1,6 +1,6 @@
-const Benchmark = require('benchmark');
-const suite = new Benchmark.Suite;
-const isChinese = require('./')
+import Benchmark from 'benchmark'
+const suite = new Benchmark.Suite();
+import isChinese from './';
 
 const chars1000 = '扁担宽，板凳长，扁担'.repeat(100)
 const chars1000WithS = '扁担宽，板凳长，扁担'.repeat(100) + 's'
@@ -18,14 +18,14 @@ suite
   .add('isChinese(chars1000) true', function () {
     isChinese(chars1000);
   })
-  .add('isChinese(chars1000WithS) false', function () {
+  .add('isChinese(chars1000WithAscii) false', function () {
     isChinese(chars1000WithS);
   })
   // add listeners
-  .on('cycle', function (event) {
+  .on('cycle', function (event: any) {
     console.log(String(event.target));
   })
-  .on('complete', function () {
+  .on('complete', function (this: Benchmark.Suite) {
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   // run async
