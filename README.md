@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/alsotang/is-chinese.svg?branch=master)](https://travis-ci.org/alsotang/is-chinese)
-
 JS 中文字符串判断（根据 unicode 编码区间判断）
 
 Determine whether a string is all Chinese(based on unicode range)
