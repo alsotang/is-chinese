@@ -1,6 +1,6 @@
-import isChinese from '..'
+import isChinese from '../src/is_chinese'
 import chai from 'chai'
-const assert = chai.assert;
+const assert: typeof chai.assert = chai.assert;
 
 describe('test/is_chinese.test.js', function () {
   it('isChinese should work with `includePunctuation=true`', function () {

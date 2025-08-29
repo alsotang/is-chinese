@@ -1,6 +1,6 @@
 import Benchmark from 'benchmark'
 const suite = new Benchmark.Suite();
-import isChinese from './';
+import isChinese from './src/is_chinese';
 
 const chars1000 = '扁担宽，板凳长，扁担'.repeat(100)
 const chars1000WithS = '扁担宽，板凳长，扁担'.repeat(100) + 's'
