@@ -1,13 +1,15 @@
 {
   "name": "is-chinese",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "assert whether a string is chinese",
   "main": "dist/is_chinese.js",
   "scripts": {
-    "test": "mocha --require ts-node/register test/*",
-    "benchmark": "ts-node benchmark.ts",
+    "test": "npm run typecheck && tsx --test test/*.test.ts",
+    "benchmark": "tsx benchmark.ts",
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "prepack": "npm run build",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -21,13 +23,14 @@
   "license": "MIT",
   "devDependencies": {
     "@types/benchmark": "^2.1.2",
-    "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.0",
     "benchmark": "^2.1.4",
-    "chai": "^4.3.7",
-    "jest": "^29.3.1",
-    "mocha": "^10.1.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
-  }
+    "typescript": "^7.0.2",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15"
+  },
+  "types": "dist/is_chinese.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "commonjs"
 }

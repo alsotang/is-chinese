@@ -1,31 +1,31 @@
 import isChinese from '../src/is_chinese'
-import chai from 'chai'
-const assert: typeof chai.assert = chai.assert;
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
-describe('test/is_chinese.test.js', function () {
+describe('isChinese', function () {
   it('isChinese should work with `includePunctuation=true`', function () {
     // full chinese
-    assert.isTrue(isChinese('中国'));
+    assert.equal(isChinese('中国'), true);
     // chinese with some ascii
-    assert.isFalse(isChinese('中国ss'))
+    assert.equal(isChinese('中国ss'), false)
     // full ascii
-    assert.isFalse(isChinese('ss'))
+    assert.equal(isChinese('ss'), false)
     // uncommon chinese word: 𠮷
-    assert.isTrue(isChinese("\uD842\uDFB7"))
+    assert.equal(isChinese("\uD842\uDFB7"), true)
     // chinese with english punctuation
-    assert.isFalse(isChinese("中国?"))
+    assert.equal(isChinese("中国?"), false)
     // chinese with chinese punctuation
-    assert.isTrue(isChinese("你要吃什么吗？！"))
+    assert.equal(isChinese("你要吃什么吗？！"), true)
     // chinese with chinese punctuation
-    assert.isTrue(isChinese('扁担宽，板凳长，扁担想绑在板凳上。'))
+    assert.equal(isChinese('扁担宽，板凳长，扁担想绑在板凳上。'), true)
     // chinese with some ascii
-    assert.isFalse(isChinese('ss扁担宽，板凳长，扁担想绑在板凳上。'))
+    assert.equal(isChinese('ss扁担宽，板凳长，扁担想绑在板凳上。'), false)
     // chinese with some ascii
-    assert.isFalse(isChinese('扁担宽，板凳长，扁担想绑在板凳上。ss'))
+    assert.equal(isChinese('扁担宽，板凳长，扁担想绑在板凳上。ss'), false)
   })
 
   it('isChinese should work with `includePunctuation=false`', function () {
-    assert.isFalse(isChinese('中国。', {includePunctuation: false}))
-    assert.isTrue(isChinese('中国', {includePunctuation: false}));
+    assert.equal(isChinese('中国。', {includePunctuation: false}), false)
+    assert.equal(isChinese('中国', {includePunctuation: false}), true);
   })
 })
